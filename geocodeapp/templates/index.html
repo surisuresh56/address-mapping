@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="modal-content">
+    <h4 class="modal-title">Upload Excel</h4>
+      <div class="modal-body">
+       <form method="post" enctype="multipart/form-data" action="{% url 'upload_excel'%}">
+                                        {% csrf_token %}
+                                        <input type="file" name="myfile11" class="myfileid" id="file" multiple  />
+                                    <button type="submit">Upload</button>
+                                    </form>
+      </div>
+</div>
+
+<a href="{% url 'download_excel' %}" title="Download" class=" w3-btn w3-blue" style="text-decoration:none;">Download</a>
+{% endblock %}
